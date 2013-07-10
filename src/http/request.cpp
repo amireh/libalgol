@@ -40,18 +40,11 @@ namespace http {
     uri.clear();
     body.clear();
     format_str.clear();
-    apikey.clear();
-    tolang.clear();
     status = status_t::valid;
   }
 
   bool request::validate_method()
   {
-    if (method != "POST") {
-      status = status_t::invalid_method;
-      return false;
-    }
-
     return true;
   }
 
@@ -98,63 +91,12 @@ namespace http {
     return true;
   }
 
-  bool request::find_and_validate_tolang()
-  {
-    for (header& h : headers)
-    {
-      // if (utility::ci_find_substr(h.name, "Dakwak-ToLang") != std::string::npos)
-      if (h.name == "algol-ToLang")
-      {
-        tolang = h.value;
-        return true;
-      }
-    }
-
-    status = status_t::missing_tolang;
-    return false;
-  }
-
-  bool request::find_and_validate_apikey()
-  {
-    for (header& h : headers)
-    {
-      // if (utility::ci_find_substr(h.name, "Dakwak-APIKey") != std::string::npos)
-      if (h.name == "algol-APIKey")
-      {
-        apikey = h.value;
-        return true;
-      }
-    }
-
-    status = status_t::missing_apikey;
-    return false;
-  }
-
-  bool request::find_and_validate_uuid()
-  {
-    for (header& h : headers)
-    {
-      // if (utility::ci_find_substr(h.name, "Dakwak-UUID") != std::string::npos)
-      if (h.name == "algol-UUID")
-      {
-        uuid = h.value;
-        return true;
-      }
-    }
-
-    status = status_t::missing_uuid;
-    return false;
-  }
-
   bool request::validate()
   {
     return
       validate_method()
       && validate_length()
-      && find_and_validate_format()
-      && find_and_validate_apikey()
-      && find_and_validate_tolang()
-      && find_and_validate_uuid();
+      && find_and_validate_format();
   }
 
   std::ostream& operator<<(std::ostream& s, const request& req)

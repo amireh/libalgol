@@ -4028,108 +4028,6 @@ fail:
 }
 
 
-static int _wrap_request_tolang_set(lua_State* L) {
-  int SWIG_arg = 0;
-  algol::http::request *arg1 = (algol::http::request *) 0 ;
-  algol::string_t *arg2 = 0 ;
-  algol::string_t temp2 ;
-  
-  SWIG_check_num_args("algol::http::request::tolang",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("algol::http::request::tolang",1,"algol::http::request *");
-  if(!lua_isstring(L,2)) SWIG_fail_arg("algol::http::request::tolang",2,"algol::string_t const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_algol__http__request,0))){
-    SWIG_fail_ptr("request_tolang_set",1,SWIGTYPE_p_algol__http__request);
-  }
-  
-  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
-  if (arg1) (arg1)->tolang = *arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_request_tolang_get(lua_State* L) {
-  int SWIG_arg = 0;
-  algol::http::request *arg1 = (algol::http::request *) 0 ;
-  algol::string_t *result = 0 ;
-  
-  SWIG_check_num_args("algol::http::request::tolang",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("algol::http::request::tolang",1,"algol::http::request *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_algol__http__request,0))){
-    SWIG_fail_ptr("request_tolang_get",1,SWIGTYPE_p_algol__http__request);
-  }
-  
-  result = (algol::string_t *) & ((arg1)->tolang);
-  lua_pushlstring(L,result->data(),result->size()); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_request_apikey_set(lua_State* L) {
-  int SWIG_arg = 0;
-  algol::http::request *arg1 = (algol::http::request *) 0 ;
-  algol::string_t *arg2 = 0 ;
-  algol::string_t temp2 ;
-  
-  SWIG_check_num_args("algol::http::request::apikey",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("algol::http::request::apikey",1,"algol::http::request *");
-  if(!lua_isstring(L,2)) SWIG_fail_arg("algol::http::request::apikey",2,"algol::string_t const &");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_algol__http__request,0))){
-    SWIG_fail_ptr("request_apikey_set",1,SWIGTYPE_p_algol__http__request);
-  }
-  
-  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
-  if (arg1) (arg1)->apikey = *arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_request_apikey_get(lua_State* L) {
-  int SWIG_arg = 0;
-  algol::http::request *arg1 = (algol::http::request *) 0 ;
-  algol::string_t *result = 0 ;
-  
-  SWIG_check_num_args("algol::http::request::apikey",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("algol::http::request::apikey",1,"algol::http::request *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_algol__http__request,0))){
-    SWIG_fail_ptr("request_apikey_get",1,SWIGTYPE_p_algol__http__request);
-  }
-  
-  result = (algol::string_t *) & ((arg1)->apikey);
-  lua_pushlstring(L,result->data(),result->size()); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_request_uuid_set(lua_State* L) {
   int SWIG_arg = 0;
   algol::http::request *arg1 = (algol::http::request *) 0 ;
@@ -4402,54 +4300,6 @@ fail:
 }
 
 
-static int _wrap_request_find_and_validate_apikey(lua_State* L) {
-  int SWIG_arg = 0;
-  algol::http::request *arg1 = (algol::http::request *) 0 ;
-  bool result;
-  
-  SWIG_check_num_args("algol::http::request::find_and_validate_apikey",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("algol::http::request::find_and_validate_apikey",1,"algol::http::request *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_algol__http__request,0))){
-    SWIG_fail_ptr("request_find_and_validate_apikey",1,SWIGTYPE_p_algol__http__request);
-  }
-  
-  result = (bool)(arg1)->find_and_validate_apikey();
-  lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_request_find_and_validate_tolang(lua_State* L) {
-  int SWIG_arg = 0;
-  algol::http::request *arg1 = (algol::http::request *) 0 ;
-  bool result;
-  
-  SWIG_check_num_args("algol::http::request::find_and_validate_tolang",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("algol::http::request::find_and_validate_tolang",1,"algol::http::request *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_algol__http__request,0))){
-    SWIG_fail_ptr("request_find_and_validate_tolang",1,SWIGTYPE_p_algol__http__request);
-  }
-  
-  result = (bool)(arg1)->find_and_validate_tolang();
-  lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static void swig_delete_request(void *obj) {
 algol::http::request *arg1 = (algol::http::request *) obj;
 delete arg1;
@@ -4462,8 +4312,6 @@ static swig_lua_method swig_algol_http_request_methods[] = {
     {"validate_method", _wrap_request_validate_method}, 
     {"validate_length", _wrap_request_validate_length}, 
     {"find_and_validate_format", _wrap_request_find_and_validate_format}, 
-    {"find_and_validate_apikey", _wrap_request_find_and_validate_apikey}, 
-    {"find_and_validate_tolang", _wrap_request_find_and_validate_tolang}, 
     {0,0}
 };
 static swig_lua_attribute swig_algol_http_request_attributes[] = {
@@ -4477,8 +4325,6 @@ static swig_lua_attribute swig_algol_http_request_attributes[] = {
     { "content_length", _wrap_request_content_length_get, _wrap_request_content_length_set},
     { "format", _wrap_request_format_get, _wrap_request_format_set},
     { "format_str", _wrap_request_format_str_get, _wrap_request_format_str_set},
-    { "tolang", _wrap_request_tolang_get, _wrap_request_tolang_set},
-    { "apikey", _wrap_request_apikey_get, _wrap_request_apikey_set},
     { "uuid", _wrap_request_uuid_get, _wrap_request_uuid_set},
     { "status", _wrap_request_status_get, _wrap_request_status_set},
     {0,0,0}
@@ -4885,8 +4731,6 @@ static swig_lua_const_info swig_constants[] = {
     {SWIG_LUA_CONSTTAB_INT("request_invalid_method", algol::http::request::invalid_method)},
     {SWIG_LUA_CONSTTAB_INT("request_invalid_format", algol::http::request::invalid_format)},
     {SWIG_LUA_CONSTTAB_INT("request_invalid_length", algol::http::request::invalid_length)},
-    {SWIG_LUA_CONSTTAB_INT("request_missing_apikey", algol::http::request::missing_apikey)},
-    {SWIG_LUA_CONSTTAB_INT("request_missing_tolang", algol::http::request::missing_tolang)},
     {SWIG_LUA_CONSTTAB_INT("request_missing_length", algol::http::request::missing_length)},
     {SWIG_LUA_CONSTTAB_INT("reply_ok", algol::http::reply::ok)},
     {SWIG_LUA_CONSTTAB_INT("reply_created", algol::http::reply::created)},

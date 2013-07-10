@@ -46,8 +46,6 @@ namespace http {
     size_t    content_length;
     char      format;             /** Found in the HTTP Content-Type header */
     string_t  format_str;         /** The literal representation of format */
-    string_t  tolang;
-    string_t  apikey;
     uuid_t    uuid;
 
     enum status_t {
@@ -56,9 +54,6 @@ namespace http {
       invalid_method, /** the request method is not a POST */
       invalid_format, /** Content-Type contains an unsupported format */
       invalid_length, /** when Content-Length = 0 */
-      missing_apikey, /** there's no Dakwak-APIKey header */
-      missing_tolang, /** there's no Dakwak-ToLang header */
-      missing_uuid,   /** there's no Dakwak-UUID header */
       missing_length  /** there's no Content-Length header */
     } status;
 
@@ -93,23 +88,9 @@ namespace http {
      */
     virtual bool find_and_validate_format();
 
-    /**
-     * Dakwak-APIKey header must be set.
-     */
-    virtual bool find_and_validate_apikey();
-
-    /**
-     * Dakwak-ToLang header must be set.
-     */
-    virtual bool find_and_validate_tolang();
-
-    /**
-     * Dakwak-UUID header must be set.
-     */
-    virtual bool find_and_validate_uuid();
   };
 
 } // namespace http
 } // namespace algol
 
-#endif // H_ALGOL_REQUEST_H
+#endif // H_ALGOL_HTTP_REQUEST_H
