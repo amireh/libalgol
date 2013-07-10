@@ -1,0 +1,9 @@
+bin
+build
+log
+exclude
+lib/
+lib*.so
+doc/api
+include/algol/algol_config.hpp
+src/bindings/python/SWIG/wrappers/*

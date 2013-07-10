@@ -1,0 +1,15 @@
+/**
+ * THIS IS AN AUTO-GENERATED FILE BY CMAKE, DO NOT EDIT DIRECTLY.
+ */
+
+#ifndef H_ALGOL_CONFIG_H
+#define H_ALGOL_CONFIG_H
+
+#cmakedefine ALGOL_LOG_FQN
+#cmakedefine ALGOL_PYTHON_BINDINGS
+#cmakedefine ALGOL_LUA_BINDINGS
+#cmakedefine ALGOL_MESSAGING
+#cmakedefine ALGOL_ANALYTICS
+#cmakedefine ALGOL_ADMIN
+
+#endif
