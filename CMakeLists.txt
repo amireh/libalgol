@@ -19,6 +19,7 @@ ADD_DEFINITIONS("-Wno-deprecated -Wall -Wextra -Wno-reorder -std=c++0x")
 
 OPTION(ALGOL_LOG_FQN "Log entries will be prefixed with the fully-qualified name of the application" OFF)
 OPTION(ALGOL_PYTHON_BINDINGS "Build Python SWIG bindings" OFF)
+OPTION(ALGOL_LUA_ENGINE "Build the Lua engine" OFF)
 OPTION(ALGOL_LUA_BINDINGS "Build Lua SWIG bindings" OFF)
 OPTION(ALGOL_MESSAGING "Build the AMQP messaging components" OFF)
 OPTION(ALGOL_ANALYTICS "Build the AMQP analytics components (requires ALGOL_MESSAGING)" OFF)
@@ -67,7 +68,7 @@ IF (ALGOL_MESSAGING)
 
 ENDIF()
 
-IF (ALGOL_LUA_BINDINGS)
+IF (ALGOL_LUA_BINDINGS OR ALGOL_LUA_ENGINE)
   FIND_PACKAGE(Lua 5.1 REQUIRED)
   INCLUDE_DIRECTORIES( ${Lua_INCLUDE_DIR_51} )
   LINK_LIBRARIES( ${Lua_LIBRARY_51} )

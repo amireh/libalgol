@@ -78,6 +78,13 @@ IF(ALGOL_ADMIN)
   ADD_SUBDIRECTORY(algolSH)
 ENDIF()
 
+IF(ALGOL_LUA_ENGINE)
+  LIST(APPEND algol_SRCS
+              ../include/algol/lua/engine.hpp
+
+              lua/engine.cpp)
+ENDIF()
+
 ADD_DEFINITIONS("-DENABLE_BINRELOC")
 ADD_DEFINITIONS("-Wno-deprecated -std=c++0x")
 

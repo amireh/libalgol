@@ -7,6 +7,7 @@
 
 #cmakedefine ALGOL_LOG_FQN
 #cmakedefine ALGOL_PYTHON_BINDINGS
+#cmakedefine ALGOL_LUA_ENGINE
 #cmakedefine ALGOL_LUA_BINDINGS
 #cmakedefine ALGOL_MESSAGING
 #cmakedefine ALGOL_ANALYTICS

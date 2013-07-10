@@ -92,6 +92,15 @@ namespace algol {
     };
   }
 
+  namespace lua {
+    class script_error : public std::runtime_error {
+    public:
+      inline script_error(const std::string& s)
+      : std::runtime_error(s)
+      { }
+    };
+
+  }
 } // end of namespace Pixy
 
 #endif
